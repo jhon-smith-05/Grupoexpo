@@ -3,6 +3,8 @@ package bernal_prueba_ge.controller;
 import bernal_prueba_ge.model.entities.Empresa;
 import bernal_prueba_ge.service.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +17,8 @@ public class EmpresaController {
     private EmpresaService service;
 
     @PostMapping("/empresa")
-    public Empresa guardar(@RequestBody Empresa empresa){
+    @ResponseStatus(HttpStatus.CREATED)
+    public Empresa guardar(@RequestBody  Empresa empresa){
         return service.registrar(empresa);
     }
 

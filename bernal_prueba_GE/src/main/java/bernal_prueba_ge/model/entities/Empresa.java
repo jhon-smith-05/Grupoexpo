@@ -10,11 +10,17 @@ public class Empresa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_Empresa")
     private int idEmpresa;
+    @Column(name = "ruc")
     private String ruc;
+    @Column(name = "razon_Social")
     private String razonSocial;
+    @Column(name = "direccion")
     private String direccion;
+    @Column(name = "estado")
     private String estado;
+    @Column(name = "fecha")
     private Date fecha;
 
     public Empresa() {
